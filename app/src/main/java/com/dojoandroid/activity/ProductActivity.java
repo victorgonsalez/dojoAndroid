@@ -11,7 +11,9 @@ import com.dojoandroid.entity.Product;
 import java.util.ArrayList;
 import java.util.List;
 
-
+/**
+ * Created by vgonsalez on 6/13/16.
+ */
 public class ProductActivity extends Activity {
 
     @Override
