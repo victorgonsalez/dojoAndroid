@@ -36,7 +36,7 @@ public class MainActivity extends Activity {
 
         if (mSharedPreferences.getBoolean("IS_LOGGED", false)) {
 
-            //TO DO CREATE A LANDING SCREEN INSTEAD OF USE SUMMARY FOR IT.
+            //TODO CREATE A LANDING SCREEN INSTEAD OF USE SUMMARY FOR IT.
             Intent intent = new Intent(MainActivity.this, AuthenticatedActivity.class);
             intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
             intent.putExtra("Name", "android");
