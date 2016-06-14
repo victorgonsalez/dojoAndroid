@@ -69,6 +69,7 @@ public class MainActivity extends Activity {
                         && mPassword != null && mPassword.equals("android123")) {
 
                     enableLogin();
+                    isAppLogged(true);
                     Toast.makeText(MainActivity.this, getString(R.string.welcome), Toast.LENGTH_SHORT).show();
 
                 } else {
