@@ -29,18 +29,18 @@ public class MainActivity extends Activity {
         super.onCreate(savedInstanceState);
         mSharedPreferences = getSharedPreferences(Constants.LOG_PREFERENCES, 0);
         setContentView(R.layout.activity_main);
-        isAppLogged(false);
+        isAppLogged();
     }
 
-    private void isAppLogged(boolean isNewLogin) {
+    private void isAppLogged() {
 
         if (mSharedPreferences.getBoolean("IS_LOGGED", false)) {
+
+            //TO DO CREATE A LANDING SCREEN INSTEAD OF USE SUMMARY FOR IT.
             Intent intent = new Intent(MainActivity.this, AuthenticatedActivity.class);
-            if(isNewLogin){
-                intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
-                intent.putExtra("Name", "android");
-                startActivity(intent);
-            }
+            intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
+            intent.putExtra("Name", "android");
+            startActivity(intent);
         } else {
             loadUI();
         }
@@ -50,7 +50,7 @@ public class MainActivity extends Activity {
         SharedPreferences.Editor editor = mSharedPreferences.edit();
         editor.putBoolean(Constants.IS_LOGGED, true);
         editor.apply();
-        isAppLogged(false);
+        isAppLogged();
     }
 
     private void loadUI() {
@@ -69,7 +69,7 @@ public class MainActivity extends Activity {
                         && mPassword != null && mPassword.equals("android123")) {
 
                     enableLogin();
-                    isAppLogged(true);
+                    isAppLogged();
                     Toast.makeText(MainActivity.this, getString(R.string.welcome), Toast.LENGTH_SHORT).show();
 
                 } else {
