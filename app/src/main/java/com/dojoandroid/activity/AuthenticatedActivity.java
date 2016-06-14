@@ -53,6 +53,6 @@ public class AuthenticatedActivity extends Activity {
         intent.putExtra("Name", "android");
         startActivity(intent);
 
-        Toast.makeText(AuthenticatedActivity.this, getString(R.string.logout), Toast.LENGTH_LONG).show();
+        Toast.makeText(AuthenticatedActivity.this, getString(R.string.logout), Toast.LENGTH_SHORT).show();
     }
 }
